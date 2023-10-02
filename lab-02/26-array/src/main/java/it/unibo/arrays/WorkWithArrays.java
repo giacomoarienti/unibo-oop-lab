@@ -1,7 +1,6 @@
 package it.unibo.arrays;
 
 import java.util.Arrays;
-import java.util.Map;
 
 class WorkWithArrays {
 
