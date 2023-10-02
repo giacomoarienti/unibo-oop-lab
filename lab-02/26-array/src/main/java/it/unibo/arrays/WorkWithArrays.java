@@ -80,8 +80,20 @@ class WorkWithArrays {
         return array;
     }
 
-    static double computeVariance(final int[] array) {
-        return 0;
+    static double computeVariance(final int[] array) {        
+        double sum = 0;
+        for (final int el : array) {
+            sum += el;
+        }
+        final double mean = sum / array.length;
+
+        sum = 0;
+        for (final int el : array) {
+            sum += (el - mean) * (el - mean);
+        }
+        final double variance = sum / array.length;
+
+        return variance;
     }
 
     /*
