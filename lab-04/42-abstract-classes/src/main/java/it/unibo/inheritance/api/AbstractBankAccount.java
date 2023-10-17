@@ -21,6 +21,7 @@ public abstract class AbstractBankAccount implements BankAccount {
          */
         if (checkUser(id)) {
             this.balance -= this.computeFee();
+            this.resetTransactions();
         }
     }
 
@@ -41,18 +42,6 @@ public abstract class AbstractBankAccount implements BankAccount {
          * l'id utente corrisponde
          */
         this.deposit(id, amount - AbstractBankAccount.ATM_TRANSACTION_FEE);
-    }
-
-    public AccountHolder getAccountHolder() {
-        return holder;
-    }
-
-    public double getBalance() {
-        return this.balance;
-    }
-
-    public int getTransactionsCount() {
-        return this.transactions;
     }
 
     public void withdraw(final int id, final double amount) {
@@ -77,12 +66,20 @@ public abstract class AbstractBankAccount implements BankAccount {
         this.withdraw(id, amount + AbstractBankAccount.ATM_TRANSACTION_FEE);
     }
 
-    protected void setBalance(final double balance) {
-        this.balance = balance;
+    public AccountHolder getAccountHolder() {
+        return holder;
     }
 
-    protected boolean checkUser(final int id) {
-        return this.getAccountHolder().getUserID() == id;
+    public double getBalance() {
+        return this.balance;
+    }
+
+    public int getTransactionsCount() {
+        return this.transactions;
+    }
+
+    protected void setBalance(final double balance) {
+        this.balance = balance;
     }
 
     protected void incrementTransactions() {
@@ -91,6 +88,10 @@ public abstract class AbstractBankAccount implements BankAccount {
 
     protected void resetTransactions() {
         this.transactions = 0;
+    }
+
+    protected boolean checkUser(final int id) {
+        return this.getAccountHolder().getUserID() == id;
     }
 
     /**

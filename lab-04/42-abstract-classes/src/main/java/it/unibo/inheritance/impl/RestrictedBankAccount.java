@@ -12,18 +12,12 @@ public class RestrictedBankAccount extends AbstractBankAccount {
     }
 
     @Override
-    public void chargeManagementFees(final int id) {
-        super.chargeManagementFees(id);
-        this.resetTransactions();
-    }
-
-    @Override
     protected boolean isWithDrawAllowed(double amount) {
         return this.getBalance() >= amount;
     }
 
     @Override
     protected double computeFee() {
-        return MANAGEMENT_FEE + this.getTransactionsCount() * RestrictedBankAccount.TRANSACTION_FEE;
+        return AbstractBankAccount.MANAGEMENT_FEE + this.getTransactionsCount() * RestrictedBankAccount.TRANSACTION_FEE;
     }
 }
