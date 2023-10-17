@@ -1,0 +1,4 @@
+classDiagram 
+    BankAccount <|--AbstractBankAccount    
+    AbstractBankAccount <|-- SimpleBankAccount
+    AbstractBankAccount <|-- StrictBankAccount
