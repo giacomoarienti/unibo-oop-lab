@@ -12,7 +12,7 @@ public class RestrictedBankAccount extends AbstractBankAccount {
     }
 
     @Override
-    protected boolean isWithDrawAllowed(double amount) {
+    protected boolean isWithDrawAllowed(final double amount) {
         return this.getBalance() >= amount;
     }
 

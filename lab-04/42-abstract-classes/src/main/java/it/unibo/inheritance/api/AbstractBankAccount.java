@@ -98,7 +98,7 @@ public abstract class AbstractBankAccount implements BankAccount {
      * Returns `true` if it's possible to draw from the bank account the amount passed as parameter.
      * @param amount
      */
-    protected abstract boolean isWithDrawAllowed(double amount);
+    protected abstract boolean isWithDrawAllowed(final double amount);
 
     /**
      * Returns the current amount of the management fees (does not modify the state)

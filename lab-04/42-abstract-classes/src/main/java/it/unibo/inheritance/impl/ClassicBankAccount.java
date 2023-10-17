@@ -9,7 +9,7 @@ public class ClassicBankAccount extends AbstractBankAccount {
     }
 
     @Override
-    protected boolean isWithDrawAllowed(double amount) {
+    protected boolean isWithDrawAllowed(final double amount) {
         return true;
     }
 
