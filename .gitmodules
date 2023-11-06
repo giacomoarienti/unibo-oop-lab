@@ -1,3 +1,9 @@
 [submodule "lab-06"]
 	path = lab-06
 	url = git@github.com:giacomoarienti/unibo-lab06.git
+[submodule "lab07"]
+	path = lab07
+	url = git@github.com:giacomoarienti/lab07.git
+[submodule "lab-07"]
+	path = lab-07
+	url = git@github.com:giacomoarienti/lab07.git
