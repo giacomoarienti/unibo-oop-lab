@@ -7,3 +7,6 @@
 [submodule "lab-08"]
 	path = lab-08
 	url = git@github.com:giacomoarienti/lab08.git
+[submodule "lab-09"]
+	path = lab-09
+	url = git@github.com:giacomoarienti/lab09.git
